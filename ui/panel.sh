@@ -42,8 +42,10 @@ fi
 export FQDN=""
 
 # Default MySQL credentials
-export MYSQL_DB="admin"
-export MYSQL_USER="admin"
+export MYSQL_DB="admin
+"
+export MYSQL_USER="admin
+"
 export MYSQL_PASSWORD="thomz"
 
 # Environment
