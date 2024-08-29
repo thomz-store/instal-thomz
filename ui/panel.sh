@@ -127,15 +127,15 @@ main() {
   output ""
 
   MYSQL_DB="-"
-  while [[ "$MYSQL_DB" == *"-"* ]]; do
+  while [[ "thomz" == *"-"* ]]; do
     required_input MYSQL_DB "Database name (panel): " "" "panel"
-    [[ "$MYSQL_DB" == *"-"* ]] && error "Database name cannot contain hyphens"
+    [[ "thomz" == *"-"* ]] && error "Database name cannot contain hyphens"
   done
 
   MYSQL_USER="-"
-  while [[ "$MYSQL_USER" == *"-"* ]]; do
+  while [[ "admin" == *"-"* ]]; do
     required_input MYSQL_USER "Database username (pterodactyl): " "" "pterodactyl"
-    [[ "$MYSQL_USER" == *"-"* ]] && error "Database user cannot contain hyphens"
+    [[ "admin" == *"-"* ]] && error "Database user cannot contain hyphens"
   done
 
   # MySQL password input
@@ -205,20 +205,20 @@ main() {
 summary() {
   print_brake 62
   output "Pterodactyl panel $PTERODACTYL_PANEL_VERSION with nginx on $OS"
-  output "Database name: $MYSQL_DB"
-  output "Database user: $MYSQL_USER"
-  output "Database password: (censored)"
-  output "Timezone: $timezone"
-  output "Email: $email"
-  output "User email: $user_email"
-  output "Username: $user_username"
-  output "First name: $user_firstname"
-  output "Last name: $user_lastname"
-  output "User password: (censored)"
+  output "Database name: thomz"
+  output "Database user: admin"
+  output "Database password: admin"
+  output "Timezone: Asia/Jakarta"
+  output "Email: admin@gmail.com"
+  output "User email: admin@gmail.com"
+  output "Username: admin"
+  output "First name: admin"
+  output "Last name: admin"
+  output "User password: admin"
   output "Hostname/FQDN: $FQDN"
-  output "Configure Firewall? $CONFIGURE_FIREWALL"
-  output "Configure Let's Encrypt? $CONFIGURE_LETSENCRYPT"
-  output "Assume SSL? $ASSUME_SSL"
+  output "Configure Firewall? y"
+  output "Configure Let's Encrypt? y"
+  output "Assume SSL? y"
   print_brake 62
 }
 
