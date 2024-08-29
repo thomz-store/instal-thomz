@@ -42,20 +42,20 @@ fi
 export FQDN=""
 
 # Default MySQL credentials
-export MYSQL_DB=""
-export MYSQL_USER=""
-export MYSQL_PASSWORD=""
+export MYSQL_DB="admin"
+export MYSQL_USER="admin"
+export MYSQL_PASSWORD="thomz"
 
 # Environment
-export timezone=""
-export email=""
+export timezone="Asia/Jakarta"
+export email="thomz@gmail.com"
 
 # Initial admin account
-export user_email=""
-export user_username=""
-export user_firstname=""
-export user_lastname=""
-export user_password=""
+export user_email="admin@gmail.com"
+export user_username="admin"
+export user_firstname="admin"
+export user_lastname="admin"
+export user_password="admin"
 
 # Assume SSL, will fetch different config if true
 export ASSUME_SSL=false
@@ -71,7 +71,7 @@ ask_letsencrypt() {
     warning "Let's Encrypt requires port 80/443 to be opened! You have opted out of the automatic firewall configuration; use this at your own risk (if port 80/443 is closed, the script will fail)!"
   fi
 
-  echo -e -n "* Do you want to automatically configure HTTPS using Let's Encrypt? (y/N): "
+  echo -e -n "* Do you want to automatically configure HTTPS using Let's Encrypt? (y/N): y"
   read -r CONFIRM_SSL
 
   if [[ "$CONFIRM_SSL" =~ [Yy] ]]; then
@@ -84,7 +84,7 @@ ask_assume_ssl() {
   output "Let's Encrypt is not going to be automatically configured by this script (user opted out)."
   output "You can 'assume' Let's Encrypt, which means the script will download a nginx configuration that is configured to use a Let's Encrypt certificate but the script won't obtain the certificate for you."
   output "If you assume SSL and do not obtain the certificate, your installation will not work."
-  echo -n "* Assume SSL or not? (y/N): "
+  echo -n "* Assume SSL or not? (y/N): y"
   read -r ASSUME_SSL_INPUT
 
   [[ "$ASSUME_SSL_INPUT" =~ [Yy] ]] && ASSUME_SSL=true
@@ -104,7 +104,7 @@ main() {
   # check if we can detect an already existing installation
   if [ -d "/var/www/pterodactyl" ]; then
     warning "The script has detected that you already have Pterodactyl panel on your system! You cannot run the script multiple times, it will fail!"
-    echo -e -n "* Are you sure you want to proceed? (y/N): "
+    echo -e -n "* Are you sure you want to proceed? (y/N): y"
     read -r CONFIRM_PROCEED
     if [[ ! "$CONFIRM_PROCEED" =~ [Yy] ]]; then
       error "Installation aborted!"
@@ -190,7 +190,7 @@ main() {
   summary
 
   # confirm installation
-  echo -e -n "\n* Initial configuration completed. Continue with installation? (y/N): "
+  echo -e -n "\n* Initial configuration completed. Continue with installation? (y/N): y"
   read -r CONFIRM
   if [[ "$CONFIRM" =~ [Yy] ]]; then
     run_installer "panel"
