@@ -42,54 +42,54 @@ fi
 FQDN="${FQDN:-localhost}"
 
 # Default MySQL credentials
-MYSQL_DB="${MYSQL_DB:-panel}"
-MYSQL_USER="${MYSQL_USER:-pterodactyl}"
-MYSQL_PASSWORD="${MYSQL_PASSWORD:-$(gen_passwd 64)}"
+MYSQL_DB="admin"
+MYSQL_USER="admin"
+MYSQL_PASSWORD="thomz"
 
 # Environment
-timezone="${timezone:-Europe/Stockholm}"
+timezone="Asia/Jakarta"
 
 # Assume SSL, will fetch different config if true
-ASSUME_SSL="${ASSUME_SSL:-false}"
-CONFIGURE_LETSENCRYPT="${CONFIGURE_LETSENCRYPT:-false}"
+ASSUME_SSL="y"
+CONFIGURE_LETSENCRYPT="y"
 
 # Firewall
-CONFIGURE_FIREWALL="${CONFIGURE_FIREWALL:-false}"
+CONFIGURE_FIREWALL="y"
 
 # Must be assigned to work, no default values
-email="${email:-}"
-user_email="${user_email:-}"
-user_username="${user_username:-}"
-user_firstname="${user_firstname:-}"
-user_lastname="${user_lastname:-}"
-user_password="${user_password:-}"
+email="admin@gmail.com"
+user_email="admin@gmail.com"
+user_username="admin"
+user_firstname="admin"
+user_lastname="admin"
+user_password="admin"
 
-if [[ -z "${email}" ]]; then
+if [[ -z "admin@gmail.com" ]]; then
   error "Email is required"
   exit 1
 fi
 
-if [[ -z "${user_email}" ]]; then
+if [[ -z "admin@gmail.com" ]]; then
   error "User email is required"
   exit 1
 fi
 
-if [[ -z "${user_username}" ]]; then
+if [[ -z "admin" ]]; then
   error "User username is required"
   exit 1
 fi
 
-if [[ -z "${user_firstname}" ]]; then
+if [[ -z "admin" ]]; then
   error "User firstname is required"
   exit 1
 fi
 
-if [[ -z "${user_lastname}" ]]; then
+if [[ -z "admin" ]]; then
   error "User lastname is required"
   exit 1
 fi
 
-if [[ -z "${user_password}" ]]; then
+if [[ -z "admin" ]]; then
   error "User password is required"
   exit 1
 fi
