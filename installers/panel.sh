@@ -42,7 +42,8 @@ fi
 FQDN="${FQDN:-localhost}"
 
 # Default MySQL credentials
-MYSQL_DB="admin"
+MYSQL_DB="admin
+"
 MYSQL_USER="admin"
 MYSQL_PASSWORD="thomz"
 
